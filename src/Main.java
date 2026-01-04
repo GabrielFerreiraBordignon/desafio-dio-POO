@@ -1,4 +1,6 @@
+import desafio.dominio.Bootcamp;
 import desafio.dominio.Curso;
+import desafio.dominio.Dev;
 import desafio.dominio.Mentoria;
 
 void main() {
@@ -20,4 +22,28 @@ void main() {
     System.out.println(curso1);
     System.out.println(curso2);
     System.out.println(mentoria);
+
+    Bootcamp bootcamp = new Bootcamp();
+    bootcamp.setNome("Java developer");
+    bootcamp.setDescricao("Descricção java");
+    bootcamp.getConteudos().add(curso1);
+    bootcamp.getConteudos().add(curso2);
+    bootcamp.getConteudos().add(mentoria);
+
+    Dev devCamila = new Dev();
+    devCamila.setNome("Camila");
+    devCamila.inscreverBootcamp(bootcamp);
+    System.out.println("Conteudos: " + devCamila.getConteudoInscritos());
+    devCamila.progredir();
+    System.out.println("Conteudos: " + devCamila.getConteudosConcluidos());
+
+
+
+    Dev devJoao = new Dev();
+    devJoao.setNome("Joao");
+    devJoao.inscreverBootcamp(bootcamp);
+    System.out.println("Conteudos: " + devJoao.getConteudoInscritos());
+    devJoao.progredir();
+    System.out.println("Conteudos: " + devJoao.getConteudosConcluidos());
+
 }
